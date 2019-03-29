@@ -1,0 +1,113 @@
+
+<html>
+    <style>
+        .small { font: italic 13px sans-serif; }
+        .heavy { font: bold 100px sans-serif; }
+        textarea {
+            width: 90%;
+            height: 150;
+            margin: 20; /* don't want to add to container size */
+            border: 1; /* don't want to add to container size */
+            }
+    form.hide-submit input[type="submit"] { display: none;}
+        </style>
+    <script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                                                     vars[key] = value;
+                                                     });
+                                                     return vars;
+        }
+    </script>
+    <body>
+        <font face="verdana">
+            <h1><font size="24">Catalog Request -
+                <script>
+                    var action2 = getUrlVars()["actiontype"];
+                    document.write(action2);
+                    </script>
+            
+            </h1>
+            
+        </font>
+       
+                <table>
+                    <tr>
+                        <td><b><font size="14">Ordered By</b></td>
+                        <td>:</td>
+                        <td><font size="14"><script>
+                            var orderedby = getUrlVars()["orderedby"];
+                            document.write(orderedby.split("+").join(" "));
+                            </script></td>
+                    </tr>
+                    <tr>
+                        <td><b><font size="14">Product</b></td>
+                        <td>:</td>
+                        <td><font size="14"><script>
+                            var product = getUrlVars()["product"];
+                            document.write(product.split("+").join(" "));
+                            </script></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><b><font size="14">Portfolio</b></td>
+                        <td>:</td>
+                        <td><font size="14"><script>
+                            var portfolio = getUrlVars()["portfolio"];
+                            document.write(portfolio.split("+").join(" "));
+                            </script></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><b><font size="14">Platform</b></td>
+                        <td>:</td>
+                        <td><font size="14"><script>
+                            var platform = getUrlVars()["platform"];
+                            document.write(platform.split("+").join(" "));
+                            </script></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><b><font size="14">Order ID</b></td>
+                        <td>:</td>
+                        <td><font size="14"><script>
+                            var orderid = getUrlVars()["orderid"];
+                            document.write(orderid.split("+").join(" "));
+                            </script></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><b><font size="14">Order Date</b></td>
+                        <td>:</td>
+                        <td><font size="14"><script>
+                            var orderdate = getUrlVars()["orderdate"];
+                            document.write(orderdate.split("%2F").join("/"));
+                            </script></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><b><font size="14">Order Time</b></td>
+                        <td>:</td>
+                        <td><font size="14"> <script>
+                            var ordertime = getUrlVars()["ordertime"];
+                            document.write(ordertime.split("%3A").join(":"));
+                            </script></td>
+                        
+                    </tr>
+                    </tr>
+                    
+                </table>
+                <br><font size="14">
+                <script>
+                    var memo = getUrlVars()["memo"];
+                    var memo2 = memo.split("+").join(" ");
+                    document.write(memo2);
+                    </script>
+                
+                <br>
+           
+                
+                
+    </body>
+</html>

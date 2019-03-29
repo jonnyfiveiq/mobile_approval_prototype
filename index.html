@@ -1,0 +1,126 @@
+<html>
+    <style>
+        .small { font: italic 13px sans-serif; }
+        .heavy { font: bold 100px sans-serif; }
+        textarea {
+            width: 90%;
+            height: 150;
+            margin: 20; /* don't want to add to container size */
+            border: 1; /* don't want to add to container size */
+            font-size: 22px;
+        }
+    form.hide-submit input[type="submit"] { display: none;}
+        </style>
+    <script type="text/JavaScript">
+          function submitform(actiontypevar){
+           
+             if (memo.value.length == 0 && (actiontypevar == 'Denied' || actiontypevar == 'Memo')) {
+                alert(actiontypevar + " Requires that a Memo is set" );
+                return;
+             } else {
+                 document.getElementById('actiontype').value = actiontypevar;
+                 document.getElementById('form1').submit();
+             }
+        }
+        </script>
+    <body>
+        <img width="300" height="100" src="./Red_Hat_logo_RedHat.png">
+        <font face="verdana"><br>
+            <font size="22" color="red"><b>Hybrid Cloud Manager</font><hr>
+            <h1><font size="24">Catalog Request</h1>
+            <table>
+                <tr>
+                    <td><b><font size="14">Ordered By</b></td>
+                    <td>:</td>
+                    <td><font size="14">&#60;Orderer&#62;</td>
+                </tr>
+                <tr>
+                    <td><b><font size="14">Product</b></td>
+                    <td>:</td>
+                    <td><font size="14">&#60;Product&#62;</td>
+                    
+                </tr>
+                <tr>
+                    <td><b><font size="14">Portfolio</b></td>
+                    <td>:</td>
+                    <td><font size="14">&#60;Portfolio&#62;</td>
+                    
+                </tr>
+                <tr>
+                    <td><b><font size="14">Platform</b></td>
+                    <td>:</td>
+                    <td><font size="14">&#60;Platform&#62;</td>
+                    
+                </tr>
+                <tr>
+                    <td><b><font size="14">Order ID</b></td>
+                    <td>:</td>
+                    <td><font size="14">&#60;Order ID&#62;</td>
+                    
+                </tr>
+                <tr>
+                    <td><b><font size="14">Order Date</b></td>
+                    <td>:</td>
+                    <td><font size="14">&#60;Order Date&#62;</td>
+                    
+                </tr>
+                <tr>
+                    <td><b><font size="14">Order Time</b></td>
+                    <td>:</td>
+                    <td><font size="14">&#60;Order Time&#62;</td>
+                    
+                </tr>
+                </tr>
+                
+            </table>
+            <br>
+            Reason/Memo
+            <form id="form1" name="form1" action="./memo.html" method="get">
+                <input type="hidden" id="actiontype" name="actiontype" value="default" form="form1">
+                <input type="hidden" id="ordertime" name="ordertime" value="11:23:31" form="form1">
+                <input type="hidden" id="orderedby" name="orderedby" value="John Hardy" form="form1">
+                <input type="hidden" id="product" name="product" value="Hadoop Cluster" form="form1">
+                <input type="hidden" id="portfolio" name="portfolio" value="Sales" form="form1">
+                <input type="hidden" id="platform" name="platform" value="OpenShift Cluster Dev" form="form1">
+                <input type="hidden" id="orderid" name="orderid" value="0000001" form="form1">
+                <input type="hidden" id="orderdate" name="orderdate" value="10/12/2019" form="form1">
+                <textarea name="memo" id="memo" form="form1" ></textarea>
+            </form>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="250">
+                <a href="<LINK TO REQUEST ID IN APPROVAL SAAS">
+                    <g>
+                        <rect x="20" y="20" rx="0" ry="20" width="90%" height="200" style="fill:gray;stroke:black;stroke-width:5;opacity:0.5" />
+                        <text x="34%" y="50%" dominant-baseline="middle" class="heavy">Detail</text>
+                        </a>
+                </g>
+            </svg>
+            <br>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="250">
+                <a href="#" onclick="submitform('Memo')">
+                    <g>
+                        <a>
+                            <rect x="20" y="20" rx="0" ry="20" width="90%" height="200" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
+                            <text x="47%" y="50%" dominant-baseline="middle" text-anchor="middle" class="heavy" >Memo</text>
+                            </g>
+                    <br>
+                    <br>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="250">
+                        <a href="#" onclick="submitform('Approved')">
+                            <g>
+                                <rect x="20" y="20" rx="0" ry="20" width="90%" height="200" style="fill:green;stroke:black;stroke-width:5;opacity:0.5" />
+                                <text x="47%" y="50%" dominant-baseline="middle" text-anchor="middle" class="heavy" >Approve</text>
+                            </g>
+                            
+                            <br>
+                            </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="250">
+                        <a href="#" onclick="submitform('Denied')">
+                            <g>
+                                <rect x="20" y="20" rx="0" ry="20" width="90%" height="200" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                                <text x="35%" y="50%" dominant-baseline="middle" class="heavy">Deny</text>
+                            </g>
+                            </svg>
+                    </font>
+    </body>
+</html>
